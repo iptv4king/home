@@ -24,15 +24,42 @@
                         </a>
                     </div>
                 </div>
+                
+                <!-- Desktop Navigation -->
                 <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
                     <a href="index.html#features" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Features</a>
                     <a href="index.html#channels" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Channels</a>
                     <a href="index.html#pricing" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Pricing</a>
                     <a href="index.html#testimonials" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Testimonials</a>
                     <a href="index.html#faq" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">FAQ</a>
+                    <a href="iptv-reseller.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Reseller</a>
                 </div>
-                <div class="flex items-center">
+                
+                <!-- Desktop CTA Button -->
+                <div class="hidden md:flex items-center">
                     <a href="https://wa.link/1rvo79" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium">
+                        FREE TRIAL
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-900 hover:text-blue-600 focus:outline-none focus:text-blue-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+                    <a href="index.html#features" class="text-gray-900 hover:text-blue-600 block px-3 py-2 text-base font-medium">Features</a>
+                    <a href="index.html#channels" class="text-gray-900 hover:text-blue-600 block px-3 py-2 text-base font-medium">Channels</a>
+                    <a href="index.html#pricing" class="text-gray-900 hover:text-blue-600 block px-3 py-2 text-base font-medium">Pricing</a>
+                    <a href="index.html#testimonials" class="text-gray-900 hover:text-blue-600 block px-3 py-2 text-base font-medium">Testimonials</a>
+                    <a href="index.html#faq" class="text-gray-900 hover:text-blue-600 block px-3 py-2 text-base font-medium">FAQ</a>
+                    <a href="iptv-reseller.html" class="text-gray-900 hover:text-blue-600 block px-3 py-2 text-base font-medium">Reseller</a>
+                    <a href="https://wa.link/1rvo79" class="bg-blue-600 hover:bg-blue-700 text-white block px-3 py-2 text-base font-medium rounded-md mt-4">
                         FREE TRIAL
                     </a>
                 </div>
@@ -111,5 +138,36 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = mobileMenuButton.querySelector('i');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+    </script>
 </body>
 </html> 
