@@ -18,7 +18,13 @@
     <lastmod>2025-06-20T23:53:30+00:00</lastmod>
     <priority>0.80</priority>
   </url>
-
+  
+<url>
+    <loc>https://iptvsonic.com/sonic-iptv</loc>
+    <lastmod>2025-06-20T23:53:30+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+  
   <url>
     <loc>https://iptvsonic.com/iptv-reseller.html</loc>
     <lastmod>2025-06-20T23:53:30+00:00</lastmod>
@@ -62,3 +68,4 @@
   </url>
 
 </urlset>
+
